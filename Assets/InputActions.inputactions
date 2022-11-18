@@ -1,0 +1,51 @@
+{
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "Basicinput",
+            "id": "c48b99f8-69a6-4d4b-a89f-da6c22b6292f",
+            "actions": [
+                {
+                    "name": "Test",
+                    "type": "Button",
+                    "id": "dad7d7af-6e3b-4881-9381-dd5cf3d28ee3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8f1c1a92-4720-40a3-a67d-bcf559491211",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ControlScheme",
+                    "action": "Test",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "ControlScheme",
+            "bindingGroup": "ControlScheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
