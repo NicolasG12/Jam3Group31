@@ -11,6 +11,7 @@ public class CharacterSelection : MonoBehaviour
     private Button mecha;
     private Button magical_girl;
     private Button super_sentai;
+    private Button attack;
     public Vector3 front;
     private GameObject inFront;
     private Vector3 target;
@@ -27,6 +28,8 @@ public class CharacterSelection : MonoBehaviour
         magical_girl.RegisterCallback<ClickEvent>(ev => SwapChar(1));
         super_sentai = frame.Q<Button>("SuperSentai");
         super_sentai.RegisterCallback<ClickEvent>(ev => SwapChar(2));
+        attack = frame.Q<Button>("Attack");
+        attack.RegisterCallback<ClickEvent>(ev => Attack());
     }
 
     // Start is called before the first frame update
@@ -51,5 +54,11 @@ public class CharacterSelection : MonoBehaviour
             characters[data].transform.position = Vector3.MoveTowards(characters[data].transform.position, front, speed);
         }
         inFront = characters[data];
+    }
+
+    private void Attack()
+    {
+        Debug.Log(inFront + " attacked");
+        
     }
 }
