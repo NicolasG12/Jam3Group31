@@ -7,14 +7,13 @@ using UnityEngine.UIElements;
 public class CharacterSelection : MonoBehaviour
 {
     public List<GameObject> characters;
-    //public VisualTreeAsset mainUI;
     private VisualElement frame;
     private Button mecha;
     private Button magical_girl;
     private Button super_sentai;
-    private List<Vector3> locations = new List<Vector3>();
-    private bool swap = false;
-    private int toFront;
+    public Vector3 front;
+    private GameObject inFront;
+    private Vector3 target;
     public float speed = 1.0f;
 
     private void OnEnable()
@@ -33,33 +32,24 @@ public class CharacterSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject character in characters)
-        {
-            locations.Add(character.transform.position);
-        }
-
-        
+        inFront = characters[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(swap)
-        //{
-        //    Vector3 character_loc = characters[toFront].transform.position;
-        //    character_loc = Vector3.MoveTowards(character_loc, locations[0], speed * Time.deltaTime);
-        //    if(Vector3.Distance(character_loc, locations[0]) < 0.1f)
-        //    {
-        //        swap = false;
-        //    }
-        //}
+
     }
     private void SwapChar(int data)
     {
-        for (int i = 0; i < 1000;  i++) {
-            characters[data].transform.position = Vector3.MoveTowards(characters[data].transform.position, locations[0], speed * Time.deltaTime);
+        target = characters[data].transform.position;
+        while (Vector3.Distance(inFront.transform.position, target) > 0.1f)
+        {
+            inFront.transform.position = Vector3.MoveTowards(inFront.transform.position, target, speed);
         }
-        //toFront = data;
-        //swap = true;
+        while (Vector3.Distance(characters[data].transform.position, front) > 0.1f) {
+            characters[data].transform.position = Vector3.MoveTowards(characters[data].transform.position, front, speed);
+        }
+        inFront = characters[data];
     }
 }
