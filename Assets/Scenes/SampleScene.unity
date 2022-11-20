@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: 0
-  speed: 1
+  speed: 9
   diff: {x: 1.85, y: 2.14, z: 0}
   playerLocations:
   - {x: -8.76, y: -1.51, z: 0}
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: 2
-  speed: 1
+  speed: 9
   diff: {x: 1.85, y: -2.14, z: 0}
   playerLocations:
   - {x: -8.76, y: -1.51, z: 0}
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: 1
-  speed: 1
+  speed: 9
   diff: {x: 1.85, y: 2.14, z: 0}
   playerLocations:
   - {x: -8.76, y: -1.51, z: 0}
