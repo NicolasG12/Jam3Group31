@@ -20,7 +20,7 @@ public class EventManager : MonoBehaviour
     }
 
     void OnTest(InputValue change) {
-        Debug.Log("testing");
+        //Debug.Log("testing");
         if(OnClick != null) {
             OnClick();
         }
