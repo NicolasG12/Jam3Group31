@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   confidence: 99
-  self: {fileID: 398332817}
+  move: block
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   confidence: 100
-  self: {fileID: 751588795}
+  move: punch
 --- !u!1 &1364414746
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,4 +748,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   confidence: 98
-  self: {fileID: 1696051016}
+  move: magic

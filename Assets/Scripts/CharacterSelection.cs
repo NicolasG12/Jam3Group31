@@ -74,9 +74,12 @@ public class CharacterSelection : MonoBehaviour
     //swaps two characters based on the button that was pushed
     private void SwapChar(int data)
     {
+        if (moveState == -1) {
         //set the target to whichever character is chosen
-        target = characters[data].transform.position;
-        speed = (Vector3.Distance(target, front)) * 0.01f;
+            target = characters[data].transform.position;
+            speed = (Vector3.Distance(target, front)) * 0.01f;
+            moveState = data;
+        }
         //moves the characters to their respective positions
         /*while (Vector3.Distance(inFront.transform.position, target) > 0.1f)
         {
@@ -85,12 +88,11 @@ public class CharacterSelection : MonoBehaviour
         while (Vector3.Distance(characters[data].transform.position, front) > 0.1f) {
             characters[data].transform.position = Vector3.MoveTowards(characters[data].transform.position, front, speed);
         }*/
-        moveState = data;
         //moving = true;
         //update the infront character
     }
 
-    //function to handle attack logic
+    //function to handle attack logic (unfinished)
     private void Attack()
     {
         //tech for getting scripts to communicate with each other
@@ -104,6 +106,7 @@ public class CharacterSelection : MonoBehaviour
         inFront.GetComponent<CharState>().Attack(ref characterAttackPower, ref characterAttackType);
         Debug.Log(inFront.name + " used "+ characterAttackType);
         Debug.Log(enemy.name + " used "+enemyAttackType);
+        inFront.GetComponent<CharState>().StatUpdate(ref enemyAttackPower, ref enemyAttackType);
 
         //Debug.Log(got.ToString());
         
