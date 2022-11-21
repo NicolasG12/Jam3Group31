@@ -585,7 +585,7 @@ MonoBehaviour:
   - {fileID: 1696051016}
   - {fileID: 751588795}
   front: {x: -8.76, y: -1.51, z: 0}
-  speed: 1
+  speed: 0.01
 --- !u!1 &1696051016
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MoveCharacter : MonoBehaviour//test casey-branch commit
+public class MoveCharacter : MonoBehaviour
 {
     public int slot;
     private bool endTurn = false;
