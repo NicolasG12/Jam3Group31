@@ -134,8 +134,9 @@ GameObject:
   - component: {fileID: 398332819}
   - component: {fileID: 398332818}
   - component: {fileID: 398332820}
+  - component: {fileID: 398332821}
   m_Layer: 0
-  m_Name: Vlatka
+  m_Name: Sophrona
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,6 +227,21 @@ MonoBehaviour:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}
   - {x: -12.01, y: 2.65, z: 0}
+--- !u!114 &398332821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398332817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c46050e17cb46419f75cbaa5f43ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  confidence: 99
+  self: {fileID: 398332817}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,8 +337,9 @@ GameObject:
   - component: {fileID: 733499358}
   - component: {fileID: 733499357}
   - component: {fileID: 733499359}
+  - component: {fileID: 733499360}
   m_Layer: 0
-  m_Name: magical_girl
+  m_Name: Asteria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,6 +430,20 @@ MonoBehaviour:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}
   - {x: -12.01, y: 2.65, z: 0}
+--- !u!114 &733499360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733499356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612fd6d0febd70245970750fdeaee271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  self: {fileID: 733499356}
 --- !u!1 &751588795
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +455,7 @@ GameObject:
   - component: {fileID: 751588797}
   - component: {fileID: 751588796}
   - component: {fileID: 751588798}
+  - component: {fileID: 751588799}
   m_Layer: 0
   m_Name: SUPER MAXIMUM RANGER
   m_TagString: Untagged
@@ -516,6 +548,21 @@ MonoBehaviour:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}
   - {x: -12.01, y: 2.65, z: 0}
+--- !u!114 &751588799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751588795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c46050e17cb46419f75cbaa5f43ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  confidence: 100
+  self: {fileID: 751588795}
 --- !u!1 &1364414746
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +628,7 @@ MonoBehaviour:
   - {fileID: 398332817}
   - {fileID: 1696051016}
   - {fileID: 751588795}
+  enemy: {fileID: 733499356}
   speed: 0.01
 --- !u!1 &1696051016
 GameObject:
@@ -593,8 +641,9 @@ GameObject:
   - component: {fileID: 1696051018}
   - component: {fileID: 1696051017}
   - component: {fileID: 1696051019}
+  - component: {fileID: 1696051020}
   m_Layer: 0
-  m_Name: Josh
+  m_Name: Josh from I.T.
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,3 +734,18 @@ MonoBehaviour:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}
   - {x: -12.01, y: 2.65, z: 0}
+--- !u!114 &1696051020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696051016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c46050e17cb46419f75cbaa5f43ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  confidence: 98
+  self: {fileID: 1696051016}

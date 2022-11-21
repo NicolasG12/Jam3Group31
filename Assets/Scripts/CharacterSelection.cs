@@ -8,6 +8,7 @@ public class CharacterSelection : MonoBehaviour
 {
     //List to hold characters (when placed should be in the order that characters are set up)
     public List<GameObject> characters;
+    public GameObject enemy;
     private VisualElement frame;
     //variables to hold each of the buttons
     private Button mecha;
@@ -92,7 +93,19 @@ public class CharacterSelection : MonoBehaviour
     //function to handle attack logic
     private void Attack()
     {
-        Debug.Log(inFront + " attacked");
+        //tech for getting scripts to communicate with each other
+        //float got = inFront.GetComponent<CharState>().confidence;
+        //Debug.Log(inFront.name + " attacked");
+        float enemyAttackPower = 0f;
+        string enemyAttackType = "";
+        float characterAttackPower = 0f;
+        string characterAttackType = "";
+        enemy.GetComponent<EnemyState>().Attack(ref enemyAttackPower, ref enemyAttackType);
+        inFront.GetComponent<CharState>().Attack(ref characterAttackPower, ref characterAttackType);
+        Debug.Log(inFront.name + " used "+ characterAttackType);
+        Debug.Log(enemy.name + " used "+enemyAttackType);
+
+        //Debug.Log(got.ToString());
         
     }
 }
