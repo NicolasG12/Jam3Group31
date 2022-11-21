@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 398332818}
   - component: {fileID: 398332820}
   m_Layer: 0
-  m_Name: character1
+  m_Name: Vlatka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398332817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.76, y: -1.51, z: 0}
+  m_LocalPosition: {x: -6.6399994, y: 0.8099999, z: 0}
   m_LocalScale: {x: 0.25144067, y: 0.25144067, z: 0.25144067}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -222,7 +222,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slot: 0
   speed: 9
-  diff: {x: 1.85, y: 2.14, z: 0}
   playerLocations:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}
@@ -389,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733499356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.1347, y: -0.1636, z: 0}
+  m_LocalPosition: {x: 10.71, y: 0.91, z: 0}
   m_LocalScale: {x: 0.39627364, y: 0.4204052, z: 0.2149}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -410,7 +409,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slot: 2
   speed: 1
-  diff: {x: 1.85, y: 2.14, z: 0}
   playerLocations:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}
@@ -427,7 +425,7 @@ GameObject:
   - component: {fileID: 751588796}
   - component: {fileID: 751588798}
   m_Layer: 0
-  m_Name: character3
+  m_Name: SUPER MAXIMUM RANGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751588795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.82, y: 3.1, z: 0}
+  m_LocalPosition: {x: -14.15, y: 5.08, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -514,7 +512,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slot: 2
   speed: 9
-  diff: {x: 1.85, y: -2.14, z: 0}
   playerLocations:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}
@@ -584,7 +581,6 @@ MonoBehaviour:
   - {fileID: 398332817}
   - {fileID: 1696051016}
   - {fileID: 751588795}
-  front: {x: -8.76, y: -1.51, z: 0}
   speed: 0.01
 --- !u!1 &1696051016
 GameObject:
@@ -598,7 +594,7 @@ GameObject:
   - component: {fileID: 1696051017}
   - component: {fileID: 1696051019}
   m_Layer: 0
-  m_Name: character2
+  m_Name: Josh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,7 +660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696051016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.16, y: 0.51, z: 0}
+  m_LocalPosition: {x: -10.159999, y: 2.3699996, z: 0}
   m_LocalScale: {x: 0.6636, y: 0.6636, z: 0.6636}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -685,7 +681,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slot: 1
   speed: 9
-  diff: {x: 1.85, y: 2.14, z: 0}
   playerLocations:
   - {x: -8.76, y: -1.51, z: 0}
   - {x: -10.16, y: 0.51, z: 0}

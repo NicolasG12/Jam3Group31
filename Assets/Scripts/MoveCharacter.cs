@@ -8,7 +8,7 @@ public class MoveCharacter : MonoBehaviour
     public int slot;
     private bool endTurn = false;
     public float speed = 1.0f;
-    public Vector3 diff = new Vector3(1.85f, -2.14f, 0);
+    //public Vector3 diff = new Vector3(1.85f, -2.14f, 0);
     public Vector3[] playerLocations;
 
     // Start is called before the first frame update

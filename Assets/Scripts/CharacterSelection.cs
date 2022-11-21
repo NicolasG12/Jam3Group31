@@ -15,7 +15,7 @@ public class CharacterSelection : MonoBehaviour
     private Button super_sentai;
     private Button attack;
     //Vectors to hold the location of the front and swapping character
-    public Vector3 front;
+    private Vector3 front;
     private Vector3 target;
     //holds which character is in front
     private GameObject inFront;
@@ -46,6 +46,7 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         //assign the infront to the first character
+        front = characters[0].transform.position;
         inFront = characters[0];
     }
 
@@ -87,6 +88,7 @@ public class CharacterSelection : MonoBehaviour
         //moving = true;
         //update the infront character
     }
+
     //function to handle attack logic
     private void Attack()
     {
