@@ -43,12 +43,19 @@ public class CharacterSelection : MonoBehaviour
         attack.RegisterCallback<ClickEvent>(ev => Attack());
     }
 
+    float enemyAttackPower = 0f;
+    string enemyAttackType = "";
+    float characterAttackPower = 0f;
+    string characterAttackType = "";
+
     // Start is called before the first frame update
     void Start()
     {
         //assign the infront to the first character
         front = characters[0].transform.position;
         inFront = characters[0];
+        enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
+        Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
     }
 
     // Update is called once per frame
@@ -92,23 +99,23 @@ public class CharacterSelection : MonoBehaviour
         //update the infront character
     }
 
+
     //function to handle attack logic (unfinished)
     private void Attack()
     {
-        //tech for getting scripts to communicate with each other
-        //float got = inFront.GetComponent<CharState>().confidence;
-        //Debug.Log(inFront.name + " attacked");
-        float enemyAttackPower = 0f;
-        string enemyAttackType = "";
-        float characterAttackPower = 0f;
-        string characterAttackType = "";
-        enemy.GetComponent<EnemyState>().Attack(ref enemyAttackPower, ref enemyAttackType);
-        inFront.GetComponent<CharState>().Attack(ref characterAttackPower, ref characterAttackType);
-        Debug.Log(inFront.name + " used "+ characterAttackType);
-        Debug.Log(enemy.name + " used "+enemyAttackType);
-        inFront.GetComponent<CharState>().StatUpdate(ref enemyAttackPower, ref enemyAttackType);
 
-        //Debug.Log(got.ToString());
+        //enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
+        inFront.GetComponent<CharState>().generateAttack(ref characterAttackPower, ref characterAttackType);
+        Debug.Log(inFront.name + " used "+ characterAttackType+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log(enemy.name + " used "+enemyAttackType+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        inFront.GetComponent<CharState>().StatUpdate(ref enemyAttackPower, ref enemyAttackType);
+        enemy.GetComponent<EnemyState>().StatUpdate(ref characterAttackPower, ref characterAttackType);
+        Debug.Log(inFront.name+": "+inFront.GetComponent<CharState>().health.ToString()+"/"+inFront.GetComponent<CharState>().confidence.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log(enemy.name+": "+enemy.GetComponent<EnemyState>().health.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log("============"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
+        enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
+        Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
+
         
     }
 }

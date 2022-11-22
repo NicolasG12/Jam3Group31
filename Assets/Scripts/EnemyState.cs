@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyState : MonoBehaviour
 {
     public float health = 100f;
+    private string move;
     public GameObject self;
         // Start is called before the first frame update
     void Start()
@@ -18,13 +19,32 @@ public class EnemyState : MonoBehaviour
         
     }
 
-    public void Attack(ref float power, ref string type) 
+    public void generateAttack(ref float power, ref string type) 
     {   
         float got = Random.Range(0f, 9f);
         if (got < 3f) type = "magic";
         else if (got < 6f) type = "punch";
         else type = "block";
+        move = type;
         power = 15;
         //Debug.Log(self.name + " used "+got.ToString()+". " + ((int)health).ToString() + " health.");
+    }
+
+    public void StatUpdate(ref float cpower, ref string ctype) {
+        if (move == "punch") {
+            if (ctype == "punch") health -= cpower;
+            else if (ctype == "magic") {}
+            else if (ctype == "block") health -= cpower/8;
+        }
+        else if (move == "magic") {
+            if (ctype == "punch") health -= cpower;
+            else if (ctype == "magic") {}
+            else if (ctype == "block") {}
+        }
+        else if (move == "block") {
+            if (ctype == "punch") {}
+            else if (ctype == "magic") health -= cpower;
+            else if (ctype == "block") {}
+        }
     }
 }

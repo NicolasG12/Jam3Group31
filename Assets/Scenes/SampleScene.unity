@@ -240,8 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  confidence: 99
+  confidence: 50
   move: block
+  power: 30
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,8 +562,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  confidence: 100
+  confidence: 50
   move: punch
+  power: 30
 --- !u!1 &1364414746
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,5 +749,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  confidence: 98
+  confidence: 50
   move: magic
+  power: 30
