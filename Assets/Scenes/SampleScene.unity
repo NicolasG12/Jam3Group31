@@ -444,6 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  attack: 15
   self: {fileID: 733499356}
 --- !u!1 &751588795
 GameObject:

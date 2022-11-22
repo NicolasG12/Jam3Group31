@@ -21,6 +21,7 @@ public class CharacterSelection : MonoBehaviour
     //holds which character is in front
     private GameObject inFront;
     private int moveState = -1;
+    private int currentChar = -1;
 
     public float speed = 0.01f;
 
@@ -81,7 +82,8 @@ public class CharacterSelection : MonoBehaviour
     //swaps two characters based on the button that was pushed
     private void SwapChar(int data)
     {
-        if (moveState == -1) {
+        currentChar = data;
+        if (moveState == -1 && characters[data].GetComponent<CharState>().health > 0) {
         //set the target to whichever character is chosen
             target = characters[data].transform.position;
             speed = (Vector3.Distance(target, front)) * 0.01f;
@@ -103,7 +105,7 @@ public class CharacterSelection : MonoBehaviour
     //function to handle attack logic (unfinished)
     private void Attack()
     {
-
+        if (enemy.GetComponent<EnemyState>().health <= 0f) return;
         //enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
         inFront.GetComponent<CharState>().generateAttack(ref characterAttackPower, ref characterAttackType);
         Debug.Log(inFront.name + " used "+ characterAttackType+"            ignore this number: "+Random.Range(0f, 100f).ToString());
@@ -114,8 +116,25 @@ public class CharacterSelection : MonoBehaviour
         Debug.Log(enemy.name+": "+enemy.GetComponent<EnemyState>().health.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
         Debug.Log("============"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
         enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
-        Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
-
+        Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString()); 
         
+        if (inFront.GetComponent<CharState>().health <= 0f) Die();
+        if (enemy.GetComponent<EnemyState>().health <= 0f) {
+            Debug.Log("enemy "+enemy.name+" has been defeated!");
+        }
+    }
+
+    private void Die() {
+        bool everybodyDead = false;
+        Debug.Log(inFront.name+" died!");
+        int nextChar = -1;
+        if (characters[0].GetComponent<CharState>().health > 0) nextChar = 0;
+        else if (characters[1].GetComponent<CharState>().health > 0) nextChar = 1;
+        else if (characters[2].GetComponent<CharState>().health > 0) nextChar = 2;
+        else {
+            everybodyDead = true;
+            Debug.Log("All teammates are dead!");
+        }
+        if (!everybodyDead) SwapChar(nextChar);
     }
 }

@@ -42,7 +42,7 @@ public class CharState : MonoBehaviour
             else if (etype == "magic")  confidence += epower/2; //punch vs magic
             else if (etype == "block") { //punch vs block
                 confidence -= epower/3;
-                health -= epower/8;
+                health -= epower/5;
             }
         }
         else if (move == "magic") {
@@ -61,5 +61,7 @@ public class CharState : MonoBehaviour
             }
             else if (etype == "block") {}
         }
+        if (health < 0f) health = 0f;
+        if (confidence < 0f) confidence = 0f;
     }
 }

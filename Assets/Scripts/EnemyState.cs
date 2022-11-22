@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyState : MonoBehaviour
 {
     public float health = 100f;
+    public float attack;
     private string move;
     public GameObject self;
         // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class EnemyState : MonoBehaviour
         else if (got < 6f) type = "punch";
         else type = "block";
         move = type;
-        power = 15;
+        power = attack;
         //Debug.Log(self.name + " used "+got.ToString()+". " + ((int)health).ToString() + " health.");
     }
 
