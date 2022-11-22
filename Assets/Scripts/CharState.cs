@@ -32,6 +32,14 @@ public class CharState : MonoBehaviour
         //Debug.Log(self.name + " used "+type+". " + ((int)health).ToString() + " health, "+((int)confidence).ToString() + " confidence.");
     }
 
+    public void generateConfidenceAttack(ref float power, ref string type) 
+    {
+        type = move;
+        power = 20f;
+        confidence -= 50;
+        //Debug.Log(self.name + " used "+type+". " + ((int)health).ToString() + " health, "+((int)confidence).ToString() + " confidence.");
+    }
+
     //e for enemy
     public void StatUpdate(ref float epower, ref string etype)
     {
@@ -63,5 +71,34 @@ public class CharState : MonoBehaviour
         }
         if (health < 0f) health = 0f;
         if (confidence < 0f) confidence = 0f;
+    }
+
+    public void ConfidenceStatUpdate(ref float epower, ref string etype)
+    {
+        //unfinished code.  Feel free to delete or replace this code, or even this entire function.  It's mostly just copied from StatUpdate anyway.
+
+        /*if (move == "punch") {
+            if (etype == "punch") health -= epower;
+            else if (etype == "magic")  {}
+            else if (etype == "block") {}
+        }
+        else if (move == "magic") {
+            if (etype == "punch") { 
+                health -= epower;
+                confidence -= epower/2; 
+            }
+            else if (etype == "magic") {}//magic vs magic; do nothing
+            else if (etype == "block") confidence += power/2; //magic breaks block
+        }
+        else if (move == "block") {
+            if (etype == "punch") confidence += epower;
+            else if (etype == "magic") {
+                health -= epower;
+                confidence -= epower/2;
+            }
+            else if (etype == "block") {}
+        }
+        if (health < 0f) health = 0f;
+        if (confidence < 0f) confidence = 0f;*/
     }
 }
