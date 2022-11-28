@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,13 +8,17 @@ using UnityEngine.UIElements;
 public class CharacterSelection : MonoBehaviour
 {
     //List to hold characters (when placed should be in the order that characters are set up)
+    //public VisualTreeAsset gameUI;
+    //public StyleSheet[] styles;
     public List<GameObject> characters;
     public GameObject enemy;
     private VisualElement frame;
     //variables to hold each of the buttons
-    private Button mecha;
-    private Button magical_girl;
-    private Button super_sentai;
+    private Button clockwise;
+    private Button counterclockwise;
+    //private Button mecha;
+    //private Button magical_girl;
+    //private Button super_sentai;
     private Button attack;
     private Button confidenceAttack;
     //Vectors to hold the location of the front and swapping character
@@ -21,8 +26,10 @@ public class CharacterSelection : MonoBehaviour
     private Vector3 target;
     //holds which character is in front
     private GameObject inFront;
-    private int moveState = -1;
+    private bool moveState = false;
     private int currentChar = -1;
+    [SerializeField]
+    private float inFrontHealth;
 
     public float speed = 0.01f;
 
@@ -32,19 +39,20 @@ public class CharacterSelection : MonoBehaviour
         var rootVisualElement = uiDocument.rootVisualElement;
         //create the buttons and attach them to a function when they are clicked
         frame = rootVisualElement.Q<VisualElement>("Frame");
-        mecha = frame.Q<Button>("MechaGirl");
-        mecha.RegisterCallback<ClickEvent>(ev => SwapChar(0));
-        //mecha.RegisterCallback<ClickEvent>(ev => {moveState = 0});
-        magical_girl = frame.Q<Button>("MagicalGirl");
-        magical_girl.RegisterCallback<ClickEvent>(ev => SwapChar(1));
-        //magical_girl.RegisterCallback<ClickEvent>(ev => {moveState = 1});
-        super_sentai = frame.Q<Button>("SuperSentai");
-        super_sentai.RegisterCallback<ClickEvent>(ev => SwapChar(2));
-        //super_sentai.RegisterCallback<ClickEvent>(ev => {moveState = 2});
+        clockwise = frame.Q<Button>("clockwise");
+        clockwise.RegisterCallback<ClickEvent>(ev => SwapChar(0));
+        counterclockwise = frame.Q<Button>("counter-clockwise");
+        counterclockwise.RegisterCallback<ClickEvent>(ev => SwapChar(1));
+        //mecha = frame.Q<Button>("MechaGirl");
+        //mecha.RegisterCallback<ClickEvent>(ev => SwapChar(0));
+        //magical_girl = frame.Q<Button>("MagicalGirl");
+        //magical_girl.RegisterCallback<ClickEvent>(ev => SwapChar(1));
+        //super_sentai = frame.Q<Button>("SuperSentai");
+        //super_sentai.RegisterCallback<ClickEvent>(ev => SwapChar(2));
         attack = frame.Q<Button>("Attack");
         attack.RegisterCallback<ClickEvent>(ev => Attack());
-        confidenceAttack = frame.Q<Button>("ConfidenceAttack");
-        confidenceAttack.RegisterCallback<ClickEvent>(ev => ConfidenceAttack());
+        //confidenceAttack = frame.Q<Button>("ConfidenceAttack");
+        //confidenceAttack.RegisterCallback<ClickEvent>(ev => ConfidenceAttack());
     }
 
     float enemyAttackPower = 0f;
@@ -58,6 +66,7 @@ public class CharacterSelection : MonoBehaviour
         //assign the infront to the first character
         front = characters[0].transform.position;
         inFront = characters[0];
+        inFrontHealth = characters[0].GetComponent<CharState>().health;
         enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
         Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
     }
@@ -65,43 +74,79 @@ public class CharacterSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moveState != -1) {
-            //moves the characters to their respective positions
-            //while (Vector3.Distance(inFront.transform.position, target) > 0f)
-            //{
-                inFront.transform.position = Vector3.MoveTowards(inFront.transform.position, target, speed);
-            //}
-            //while (Vector3.Distance(characters[moveState].transform.position, front) > 0f) {
-                characters[moveState].transform.position = Vector3.MoveTowards(characters[moveState].transform.position, front, speed);
-            //}
-            if ((Vector3.Distance(inFront.transform.position, target) == 0f) && (Vector3.Distance(characters[moveState].transform.position, front)) == 0f) {
-                inFront = characters[moveState];
-                moveState = -1;
+        //if (moveState != -1) {
+        //    //moves the characters to their respective positions
+        //    //while (Vector3.Distance(inFront.transform.position, target) > 0f)
+        //    //{
+        //        inFront.transform.position = Vector3.MoveTowards(inFront.transform.position, target, speed);
+        //    //}
+        //    //while (Vector3.Distance(characters[moveState].transform.position, front) > 0f) {
+        //        characters[moveState].transform.position = Vector3.MoveTowards(characters[moveState].transform.position, front, speed);
+        //    //}
+        //    if ((Vector3.Distance(inFront.transform.position, target) == 0f) && (Vector3.Distance(characters[moveState].transform.position, front)) == 0f) {
+        //        inFront = characters[moveState];
+        //        moveState = -1;
+        //    }
+        //    //update the infront character
+        //}
+        if (moveState)
+        {
+            foreach (var character in characters)
+            {
+                character.transform.position = Vector3.MoveTowards(character.transform.position, character.GetComponent<CharState>().target, character.GetComponent<CharState>().speed);
+                if (Vector3.Distance(character.transform.position, character.GetComponent<CharState>().target) == 0f)
+                {
+                    moveState = false;
+                }
             }
-            //update the infront character
         }
 
     }
     //swaps two characters based on the button that was pushed
     private void SwapChar(int data)
     {
-        currentChar = data;
-        if (moveState == -1 && characters[data].GetComponent<CharState>().health > 0) {
-        //set the target to whichever character is chosen
-            target = characters[data].transform.position;
-            speed = (Vector3.Distance(target, front)) * 0.01f;
-            moveState = data;
-        }
-        //moves the characters to their respective positions
-        /*while (Vector3.Distance(inFront.transform.position, target) > 0.1f)
+        //currentChar = data;
+        //if (moveState == -1 && characters[data].GetComponent<CharState>().health > 0) {
+        ////set the target to whichever character is chosen
+        //    target = characters[data].transform.position;
+        //    
+        //    moveState = data;
+        //}
+        moveState = true;
+ 
+        switch (data)
         {
-            inFront.transform.position = Vector3.MoveTowards(inFront.transform.position, target, speed);
+            case 0:
+                for(int i = 0; i <= 2; i++)
+                {
+                    if (i == 0)
+                    {
+                        characters[i].GetComponent<CharState>().target = characters[2].transform.position;
+                    }
+                    else
+                    {
+                        characters[i].GetComponent<CharState>().target = characters[i - 1].transform.position;
+                    }
+                }
+                break;
+            case 1:
+                for(int i = 0; i <=2; i++)
+                {
+                    if(i == 2)
+                    {
+                        characters[i].GetComponent<CharState>().target = characters[0].transform.position;
+                    }
+                    else
+                    {
+                        characters[i].GetComponent<CharState>().target = characters[i + 1].transform.position;
+                    }
+                }
+                break;
+            default:
+                break;
         }
-        while (Vector3.Distance(characters[data].transform.position, front) > 0.1f) {
-            characters[data].transform.position = Vector3.MoveTowards(characters[data].transform.position, front, speed);
-        }*/
-        //moving = true;
-        //update the infront character
+
+
     }
 
 
@@ -169,4 +214,5 @@ public class CharacterSelection : MonoBehaviour
         }*/
     
     }
+
 }
