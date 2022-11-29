@@ -142,17 +142,16 @@ public class CharacterSelection : MonoBehaviour
     }
 
     private void ConfidenceAttack() {
-        Debug.Log("Confidence Attack clicked!  Haven't built functionality yet."+"            ignore this number: "+Random.Range(0f, 100f).ToString());
         
         //unfinished code.  Feel free to delete or replace this code, or even this entire function. It's mostly just copied from Attack() anyway.
-        /*
+        
         if (inFront.GetComponent<CharState>().confidence < 50f || enemy.GetComponent<EnemyState>().health <= 0f) return;
 
         inFront.GetComponent<CharState>().generateConfidenceAttack(ref characterAttackPower, ref characterAttackType);
-        string ctype = "";
+        string ctype = "";  //only used for the Debug Log
         if (characterAttackType == "punch") ctype = "SUPER MAXIMUM KICK";
-        else if (characterAttackType == "magic") ctype = "Rainbow Blast";
-        else if (characterAttackType == "block") ctype = "Counter";
+        else if (characterAttackType == "magic") ctype = "Telekinesis";
+        else if (characterAttackType == "block") ctype = "Were Mouse Counter";
         Debug.Log(inFront.name + " used "+ ctype+"!             ignore this number: "+Random.Range(0f, 100f).ToString());
         Debug.Log(enemy.name + " used "+enemyAttackType+"            ignore this number: "+Random.Range(0f, 100f).ToString());
         inFront.GetComponent<CharState>().ConfidenceStatUpdate(ref enemyAttackPower, ref enemyAttackType);
@@ -166,7 +165,7 @@ public class CharacterSelection : MonoBehaviour
         if (inFront.GetComponent<CharState>().health <= 0f) Die();
         if (enemy.GetComponent<EnemyState>().health <= 0f) {
             Debug.Log("enemy "+enemy.name+" has been defeated!");
-        }*/
+        }
     
     }
 }

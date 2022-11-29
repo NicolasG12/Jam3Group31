@@ -73,32 +73,28 @@ public class CharState : MonoBehaviour
         if (confidence < 0f) confidence = 0f;
     }
 
+
     public void ConfidenceStatUpdate(ref float epower, ref string etype)
     {
+        this.confidence -= 50;
         //unfinished code.  Feel free to delete or replace this code, or even this entire function.  It's mostly just copied from StatUpdate anyway.
-
-        /*if (move == "punch") {
+        if (move == "punch") {
             if (etype == "punch") health -= epower;
             else if (etype == "magic")  {}
             else if (etype == "block") {}
         }
         else if (move == "magic") {
-            if (etype == "punch") { 
-                health -= epower;
-                confidence -= epower/2; 
-            }
-            else if (etype == "magic") {}//magic vs magic; do nothing
+            if (etype == "punch") {}
+            else if (etype == "magic") {}
             else if (etype == "block") confidence += power/2; //magic breaks block
         }
         else if (move == "block") {
-            if (etype == "punch") confidence += epower;
-            else if (etype == "magic") {
-                health -= epower;
-                confidence -= epower/2;
-            }
+            if (etype == "punch") {}
+            else if (etype == "magic") {this.confidence += 25;}
             else if (etype == "block") {}
         }
         if (health < 0f) health = 0f;
-        if (confidence < 0f) confidence = 0f;*/
+        if (confidence < 0f) confidence = 0f;
+        else if (confidence > 100f) confidence = 100f;
     }
 }
