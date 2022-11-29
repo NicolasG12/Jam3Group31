@@ -16,6 +16,7 @@ public class CharacterSelection : MonoBehaviour
     private Button super_sentai;
     private Button attack;
     private Button confidenceAttack;
+    private Button desperationAttack;
     //Vectors to hold the location of the front and swapping character
     private Vector3 front;
     private Vector3 target;
@@ -45,6 +46,8 @@ public class CharacterSelection : MonoBehaviour
         attack.RegisterCallback<ClickEvent>(ev => Attack());
         confidenceAttack = frame.Q<Button>("ConfidenceAttack");
         confidenceAttack.RegisterCallback<ClickEvent>(ev => ConfidenceAttack());
+        desperationAttack = frame.Q<Button>("DesperationAttack");
+        desperationAttack.RegisterCallback<ClickEvent>(ev => DesperationAttack());
     }
 
     float enemyAttackPower = 0f;
@@ -142,9 +145,7 @@ public class CharacterSelection : MonoBehaviour
     }
 
     private void ConfidenceAttack() {
-        
-        //unfinished code.  Feel free to delete or replace this code, or even this entire function. It's mostly just copied from Attack() anyway.
-        
+
         if (inFront.GetComponent<CharState>().confidence < 50f || enemy.GetComponent<EnemyState>().health <= 0f) return;
 
         inFront.GetComponent<CharState>().generateConfidenceAttack(ref characterAttackPower, ref characterAttackType);
@@ -167,5 +168,49 @@ public class CharacterSelection : MonoBehaviour
             Debug.Log("enemy "+enemy.name+" has been defeated!");
         }
     
+    }
+
+        public void DesperationAttack() {
+        if (enemy.GetComponent<EnemyState>().health <= 0f) return;
+        int liveTeammates = 0;
+        for (int i=0; i<characters.Count; i++) {
+            if (characters[i].GetComponent<CharState>().health > 0f) liveTeammates++;
+        }
+        if (liveTeammates != 1) {
+            Debug.Log("Can't use desperation attack.  Still "+liveTeammates.ToString()+" alive."+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+            return;
+        }
+
+        inFront.GetComponent<CharState>().DesperationStatUpdate(ref characterAttackPower, enemyAttackType, enemyAttackPower);
+        enemy.GetComponent<EnemyState>().DesperationStatUpdate(characterAttackPower);
+        Debug.Log(inFront.name + " used desperation attack!             ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log(enemy.name + " used "+enemyAttackType+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log(inFront.name+": "+inFront.GetComponent<CharState>().health.ToString()+"/"+inFront.GetComponent<CharState>().confidence.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log(enemy.name+": "+enemy.GetComponent<EnemyState>().health.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log("============"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
+        enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
+        Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString()); 
+
+        /*
+        inFront.GetComponent<CharState>().generateConfidenceAttack(ref characterAttackPower, ref characterAttackType);
+        string ctype = "";  //only used for the Debug Log
+        if (characterAttackType == "punch") ctype = "SUPER MAXIMUM KICK";
+        else if (characterAttackType == "magic") ctype = "Telekinesis";
+        else if (characterAttackType == "block") ctype = "Were Mouse Counter";
+        Debug.Log(inFront.name + " used "+ ctype+"!             ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log(enemy.name + " used "+enemyAttackType+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        inFront.GetComponent<CharState>().ConfidenceStatUpdate(ref enemyAttackPower, ref enemyAttackType);
+        enemy.GetComponent<EnemyState>().ConfidenceStatUpdate(ref characterAttackPower, ref characterAttackType);
+        Debug.Log(inFront.name+": "+inFront.GetComponent<CharState>().health.ToString()+"/"+inFront.GetComponent<CharState>().confidence.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log(enemy.name+": "+enemy.GetComponent<EnemyState>().health.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+        Debug.Log("============"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
+        enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
+        Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString()); 
+        
+        if (inFront.GetComponent<CharState>().health <= 0f) Die();
+        if (enemy.GetComponent<EnemyState>().health <= 0f) {
+            Debug.Log("enemy "+enemy.name+" has been defeated!");
+        }
+        */
     }
 }

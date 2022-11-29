@@ -71,13 +71,13 @@ public class CharState : MonoBehaviour
         }
         if (health < 0f) health = 0f;
         if (confidence < 0f) confidence = 0f;
+        if (confidence > 100f) confidence = 100f;
     }
 
 
     public void ConfidenceStatUpdate(ref float epower, ref string etype)
     {
         this.confidence -= 50;
-        //unfinished code.  Feel free to delete or replace this code, or even this entire function.  It's mostly just copied from StatUpdate anyway.
         if (move == "punch") {
             if (etype == "punch") health -= epower;
             else if (etype == "magic")  {}
@@ -96,5 +96,30 @@ public class CharState : MonoBehaviour
         if (health < 0f) health = 0f;
         if (confidence < 0f) confidence = 0f;
         else if (confidence > 100f) confidence = 100f;
+    }
+
+    public void DesperationStatUpdate(ref float cpower, string etype, float epower) {
+        cpower = power / 2;
+        float drainRate = 20f;
+        if (etype != "block") {
+            health -= epower;
+            if (health < 0f) {
+                health = 0f;
+                return;
+            }
+        };
+        if (confidence >= drainRate) {
+            //Debug.Log("confidence greater"+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+            confidence -= drainRate;
+            return;
+        } else if (confidence < drainRate) {
+            float remainder = drainRate - confidence;
+            confidence = 0f;
+            remainder /= 2;
+            health -= remainder;
+            //Debug.Log("confidence less "+remainder.ToString()+"            ignore this number: "+Random.Range(0f, 100f).ToString());
+            if (health < 0f) health = 0f;
+            return;
+        }
     }
 }

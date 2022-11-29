@@ -5,5 +5,6 @@
         <ui:Button text="SUPER MAXIMUM RANGER&#10;" display-tooltip-when-elided="true" name="SuperSentai" style="height: 36px; width: 207px; left: 209px; top: 261px; right: auto; bottom: 152px; justify-content: flex-start; background-color: rgb(190, 65, 75); flex-direction: column; align-items: stretch; flex-wrap: nowrap; position: absolute; white-space: normal; -unity-text-align: middle-center;" />
         <ui:Button text="Attack" display-tooltip-when-elided="true" name="Attack" style="width: 49px; height: 30px; align-items: stretch; position: absolute; top: 205px; left: 9px;" />
         <ui:Button text="Confidence Attack" display-tooltip-when-elided="true" name="ConfidenceAttack" style="white-space: nowrap; position: absolute; top: 207px; height: 28px; left: 73px; background-color: rgb(202, 166, 0); right: 618px; width: 130px;" />
+        <ui:Button text="Desperation Attack" display-tooltip-when-elided="true" name="DesperationAttack" style="position: absolute; top: 213px; left: 219px; background-color: rgba(219, 55, 0, 255); height: 28px; width: 136px;" />
     </ui:VisualElement>
 </ui:UXML>

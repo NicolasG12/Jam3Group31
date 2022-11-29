@@ -27,6 +27,7 @@ public class EnemyState : MonoBehaviour
         else if (got < 6f) type = "punch";
         else type = "block";
         move = type;
+        //move = "block";
         power = attack;
         //Debug.Log(self.name + " used "+got.ToString()+". " + ((int)health).ToString() + " health.");
     }
@@ -50,9 +51,6 @@ public class EnemyState : MonoBehaviour
     }
 
     public void ConfidenceStatUpdate(ref float cpower, ref string ctype) {
-            //unfinished code.  Feel free to delete or replace this code, or even this entire function.  It's mostly just copied from StatUpdate anyway.
-
-
         if (move == "punch") {
             if (ctype == "punch") health -= cpower;
             else if (ctype == "magic") {health -= cpower;}
@@ -69,5 +67,9 @@ public class EnemyState : MonoBehaviour
             else if (ctype == "block") {}
         }
         
+    }
+
+    public void DesperationStatUpdate(float cpower) {
+        health -= cpower;
     }
 }
