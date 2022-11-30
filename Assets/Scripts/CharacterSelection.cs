@@ -24,6 +24,7 @@ public class CharacterSelection : MonoBehaviour
     //Vectors to hold the location of the front and swapping character
     //holds which character is in front
     private int inFrontSlot = 0;
+    private GameObject inFront;
     private bool moveState = false;
 
     public float speed = 0.01f;
@@ -40,14 +41,16 @@ public class CharacterSelection : MonoBehaviour
         counterclockwise.RegisterCallback<ClickEvent>(ev => SwapChar(1));
         attack = Buttons.Q<Button>("Attack");
         attack.RegisterCallback<ClickEvent>(ev => Attack());
+        confidenceAttack = Buttons.Q<Button>("confidence-attack");
+        confidenceAttack.RegisterCallback<ClickEvent>(ev => ConfidenceAttack());
+        desperationAttack = Buttons.Q<Button>("DesperationAttack");
+        desperationAttack.RegisterCallback<ClickEvent>(ev => DesperationAttack());
         //confidenceAttack = frame.Q<Button>("ConfidenceAttack");
         //confidenceAttack.RegisterCallback<ClickEvent>(ev => ConfidenceAttack());
         Health = rootVisualElement.Q<VisualElement>("Health");
         playerHealth = Health.Q<ProgressBar>("health");
         confidence = Health.Q<ProgressBar>("confidence");
         enemyHealth = Health.Q<ProgressBar>("enemy-health");
-        desperationAttack = frame.Q<Button>("DesperationAttack");
-        desperationAttack.RegisterCallback<ClickEvent>(ev => DesperationAttack());
     }
 
     float enemyAttackPower = 0f;
@@ -59,6 +62,7 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         //assign the infront to the first character
+        inFront = characters[inFrontSlot];
         enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
         Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
     }
@@ -118,6 +122,7 @@ public class CharacterSelection : MonoBehaviour
                     }
                 }
                 inFrontSlot = Mathf.Abs((inFrontSlot + last) % characters.Count);
+                inFront = characters[inFrontSlot];
                 break;
             default:
                 break;
