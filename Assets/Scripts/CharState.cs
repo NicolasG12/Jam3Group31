@@ -12,7 +12,8 @@ public class CharState : MonoBehaviour
     public int slot;
     public Vector3 target;
     public float speed;
-        // Start is called before the first frame update
+
+    // Start is called before the first frame update
     void Start()
     {
         target = transform.position;

@@ -1,0 +1,541 @@
+fileFormatVersion: 2
+guid: 759041be69d26724d9c8c680c83c8d30
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c4ab2907a41b04ea0fc9cee2fdd53b
+      internalID: -1654176766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_1
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 3000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9888bacc866f741a24486d1c567569
+      internalID: -794370247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_2
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 3000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d1a400c0f1fad4b936ecefc2712b97
+      internalID: 266344876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_3
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 3000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b39597688285e048bd558d26523f5af
+      internalID: 563958902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_4
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 3000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb43d0a3bbf1124088f31fd3c4fca9b
+      internalID: 825920439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_5
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 3000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b1a4e8cd5fcc445b2dfd73c7a59def
+      internalID: -270966239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5204171708928149930f62d1c032836
+      internalID: 1078426879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_7
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 2000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f3f97511457f14d82ade33fbfe0a3a
+      internalID: -528255621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_8
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 2000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a09286a27eeb24cacf3b4c08d8ce56
+      internalID: 1976207214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_9
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 2000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b040e0ab34501dc44b1a957720546621
+      internalID: -2026446774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_10
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 2000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbf6c6090c74ff46ade4c0c9743004a
+      internalID: -978806660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_11
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 2000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4256372f318717345b35a110caa63645
+      internalID: -186431238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3cd72bb420aa6b49a0a484543f138be
+      internalID: 1431590084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_13
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8501bcc4a0bef6b418281dd96dae9b1e
+      internalID: 1994923929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_14
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 1000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6bdf1e907099a4e9daa08c5695fe75
+      internalID: 1282221894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_15
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 1000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34879cda11038246bac81067d260c13
+      internalID: 177913439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_16
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 1000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddf1b9b9404e21459c46e85a3ed6547
+      internalID: -1651691889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_17
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 1000
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f12e5762920e534caaade9b9c295d6f
+      internalID: -1425654941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Josh_From_IT_Compact_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 695
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ce6eddb5e83064ba36f95a56f071cd
+      internalID: -1659335196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Josh_From_IT_Compact_4: 825920439
+      Josh_From_IT_Compact_11: -186431238
+      Josh_From_IT_Compact_15: 177913439
+      Josh_From_IT_Compact_3: 563958902
+      Josh_From_IT_Compact_0: -1654176766
+      Josh_From_IT_Compact_2: 266344876
+      Josh_From_IT_Compact_7: -528255621
+      Josh_From_IT_Compact_14: 1282221894
+      Josh_From_IT_Compact_18: -1659335196
+      Josh_From_IT_Compact_17: -1425654941
+      Josh_From_IT_Compact_16: -1651691889
+      Josh_From_IT_Compact_5: -270966239
+      Josh_From_IT_Compact_13: 1994923929
+      Josh_From_IT_Compact_8: 1976207214
+      Josh_From_IT_Compact_1: -794370247
+      Josh_From_IT_Compact_6: 1078426879
+      Josh_From_IT_Compact_10: -978806660
+      Josh_From_IT_Compact_12: 1431590084
+      Josh_From_IT_Compact_9: -2026446774
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
