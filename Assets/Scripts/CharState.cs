@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CharState : MonoBehaviour
 {
@@ -8,15 +9,19 @@ public class CharState : MonoBehaviour
     public float confidence = 50f;
     public string move; //this variable keeps track of what attack the character can use.
     public float power;
+    public int slot;
+    public Vector3 target;
+    public float speed;
         // Start is called before the first frame update
     void Start()
     {
+        target = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        speed = (Vector3.Distance(transform.position, target) * 0.01f);
         
     }
 
