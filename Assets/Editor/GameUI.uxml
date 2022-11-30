@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/GameUI.uss?fileID=7433441132597879392&amp;guid=7a1870223eab1e14c94dd220c1b2f7e9&amp;type=3#GameUI" />
+    <ui:VisualElement name="Health" style="flex-grow: 1; justify-content: flex-start; align-items: flex-start; flex-direction: row; flex-wrap: nowrap;">
+        <ui:ProgressBar title="health" focusable="false" name="health" style="flex-direction: column; align-items: stretch; left: 208px; width: 200px; height: 25px; top: 10px; background-color: rgb(255, 0, 0);" />
+        <ui:ProgressBar title="confidence" focusable="false" name="confidence" high-value="100" style="flex-direction: column; align-items: stretch; left: 0; top: 40px; width: 200px; height: 25px; background-color: rgb(0, 26, 255); -unity-background-image-tint-color: rgb(255, 6, 6);" />
+        <ui:ProgressBar title="enemy health" focusable="false" name="enemy-health" style="flex-direction: column; align-items: stretch; left: 325px; top: 15px; flex-grow: 0; flex-shrink: 0; width: 200px; height: 25px;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Buttons" style="height: 405px; width: 1101px; align-items: flex-start; justify-content: flex-start; position: relative; flex-direction: row; flex-wrap: nowrap; flex-grow: 0; top: 0;">
+        <ui:Button text="Rotate Clockwise" display-tooltip-when-elided="true" name="clockwise" class="CharSwap" style="position: relative; top: 300px; left: 20px; width: 100px; height: 50px; justify-content: flex-start; align-items: stretch; white-space: normal;" />
+        <ui:Button text="Rotate Counterclockwise" display-tooltip-when-elided="true" name="counter-clockwise" class="CharSwap" style="position: relative; top: 300px; left: 20px; width: 100px; height: 50px; white-space: normal;" />
+        <ui:Button text="Attack" display-tooltip-when-elided="true" name="Attack" class="CharSwap" style="position: relative; top: 300px; left: 20px; width: 100px; height: 50px;" />
+        <ui:Button text="Confidence" display-tooltip-when-elided="true" name="confidence-attack" style="left: 177px; top: 300px; width: 100px; height: 50px; white-space: normal;" />
+        <ui:Button text="Desperation" display-tooltip-when-elided="true" name="DesperationAttack" style="left: 180px; width: 100px; height: 50px; top: 300px;" />
+    </ui:VisualElement>
+</ui:UXML>
