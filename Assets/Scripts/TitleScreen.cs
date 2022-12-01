@@ -19,11 +19,16 @@ public class TitleScreen : MonoBehaviour
         start = background.Q<Button>("Start");
         start.RegisterCallback<ClickEvent>(ev => StartGame());
         credits = background.Q<Button>("Credits");
+        credits.RegisterCallback<ClickEvent>(ev => Credits());
     }
 
     private void StartGame()
     {
         Debug.Log("start");
         SceneManager.LoadSceneAsync("GameplayScene", LoadSceneMode.Single);
+    }
+    private void Credits()
+    {
+        gameObject.SetActive(false);
     }
 }
