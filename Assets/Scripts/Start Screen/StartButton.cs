@@ -1,25 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartButton : MonoBehaviour
 {
 
-    public GameObject self;
+    /*private Button button;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Awake() {
+        button = GetComponent<Button>();
+        button.onClick.AddListener(test);
+    }*/
 
     public void test() {
         Debug.Log("start button clicked");
     }
+
 }
