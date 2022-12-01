@@ -9,7 +9,7 @@ public class CharacterSelection : MonoBehaviour
 {
     //List to hold characters (when placed should be in the order that characters are set up)
     public List<GameObject> characters;
-    public GameObject enemy;
+    private GameObject enemy;
     private VisualElement Buttons;
     private VisualElement Health;
     //variables to hold each of the buttons
@@ -26,6 +26,7 @@ public class CharacterSelection : MonoBehaviour
     private int inFrontSlot = 0;
     private GameObject inFront;
     private bool moveState = false;
+    public GameObject levelManager;
 
     public float speed = 0.01f;
 
@@ -61,6 +62,7 @@ public class CharacterSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemy = levelManager.GetComponent<LevelManagement>().activeEnemy;
         //assign the infront to the first character
         inFront = characters[inFrontSlot];
         enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
@@ -70,6 +72,7 @@ public class CharacterSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemy = levelManager.GetComponent<LevelManagement>().activeEnemy;
         playerHealth.value = characters[inFrontSlot].GetComponent<CharState>().health;
         confidence.value = characters[inFrontSlot].GetComponent<CharState>().confidence;
         enemyHealth.value = enemy.GetComponent<EnemyState>().health;
