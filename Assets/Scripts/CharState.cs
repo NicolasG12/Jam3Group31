@@ -12,9 +12,12 @@ public class CharState : MonoBehaviour
     public int slot;
     public Vector3 target;
     public float speed;
-        // Start is called before the first frame update
+
+    private Animator anim;
+    // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         target = transform.position;
     }
 
@@ -22,6 +25,7 @@ public class CharState : MonoBehaviour
     void Update()
     {
         speed = (Vector3.Distance(transform.position, target) * 0.01f);
+        Debug.Log(anim);
         
     }
 
@@ -34,6 +38,7 @@ public class CharState : MonoBehaviour
         type = move;
         float cmultiplier = 100f/confidence;
         power = 20f * cmultiplier;
+        anim.Play("Josh_Attack");
         //Debug.Log(self.name + " used "+type+". " + ((int)health).ToString() + " health, "+((int)confidence).ToString() + " confidence.");
     }
 
