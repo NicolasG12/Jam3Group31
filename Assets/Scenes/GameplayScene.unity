@@ -953,8 +953,8 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 1207341022}
   enemies:
-  - {fileID: 111250149}
   - {fileID: 49163263}
+  - {fileID: 111250149}
   - {fileID: 1222693868}
   activeEnemy: {fileID: 0}
   switchLevel: 0

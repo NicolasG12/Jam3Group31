@@ -17,9 +17,9 @@ public class CharacterSelection : MonoBehaviour
     private Button counterclockwise;
     private Button attack;
     private Button confidenceAttack;
-    private ProgressBar playerHealth;
-    private ProgressBar confidence;
-    private ProgressBar enemyHealth;
+    private VisualElement playerHealth;
+    private VisualElement confidence;
+    private VisualElement enemyHealth;
     private Button desperationAttack;
     //Vectors to hold the location of the front and swapping character
     //holds which character is in front
@@ -27,6 +27,7 @@ public class CharacterSelection : MonoBehaviour
     private GameObject inFront;
     private bool moveState = false;
     public GameObject levelManager;
+    private bool isMoving = false;
 
     public float speed = 0.01f;
 
@@ -49,9 +50,9 @@ public class CharacterSelection : MonoBehaviour
         //confidenceAttack = frame.Q<Button>("ConfidenceAttack");
         //confidenceAttack.RegisterCallback<ClickEvent>(ev => ConfidenceAttack());
         Health = rootVisualElement.Q<VisualElement>("Health");
-        playerHealth = Health.Q<ProgressBar>("health");
-        confidence = Health.Q<ProgressBar>("confidence");
-        enemyHealth = Health.Q<ProgressBar>("enemy-health");
+        playerHealth = Health.Q<VisualElement>("health-progress");
+        confidence = Health.Q<VisualElement>("confidence-progress");
+        enemyHealth = Health.Q<VisualElement>("enemy-health-progress");
     }
 
     float enemyAttackPower = 0f;
@@ -73,17 +74,20 @@ public class CharacterSelection : MonoBehaviour
     void Update()
     {
         enemy = levelManager.GetComponent<LevelManagement>().activeEnemy;
-        playerHealth.value = characters[inFrontSlot].GetComponent<CharState>().health;
-        confidence.value = characters[inFrontSlot].GetComponent<CharState>().confidence;
-        enemyHealth.value = enemy.GetComponent<EnemyState>().health;
+        playerHealth.style.width = Length.Percent(characters[inFrontSlot].GetComponent<CharState>().health);
+        confidence.style.width = Length.Percent(characters[inFrontSlot].GetComponent<CharState>().confidence);
+        Debug.Log(confidence.style.width);
+        enemyHealth.style.width = Length.Percent(enemy.GetComponent<EnemyState>().health);
         if (moveState)
         {
+            isMoving = true;
             foreach (var character in characters)
             {
                 character.transform.position = Vector3.MoveTowards(character.transform.position, character.GetComponent<CharState>().target, character.GetComponent<CharState>().speed);
-                if (Vector3.Distance(character.transform.position, character.GetComponent<CharState>().target) == 0f)
+                if (Vector3.Distance(character.transform.position, character.GetComponent<CharState>().target) <= 0.1f)
                 {
                     moveState = false;
+                    isMoving = false;
                 }
             }
 
@@ -93,44 +97,46 @@ public class CharacterSelection : MonoBehaviour
     //swaps two characters based on the button that was pushed
     private void SwapChar(int data)
     {
-        moveState = true;
-        int last = characters.Count - 1;
-
-        switch (data)
+        if (!isMoving)
         {
-            case 0:
-                for(int i = 0; i <= last; i++)
-                {
-                    if (i == 0)
-                    {
-                        characters[i].GetComponent<CharState>().target = characters[last].transform.position;
-                    }
-                    else
-                    {
-                        characters[i].GetComponent<CharState>().target = characters[i - 1].transform.position;
-                    }
-                }
-                inFrontSlot = (inFrontSlot + 1) % characters.Count;
-                break;
-            case 1:
-                for(int i = 0; i <=last; i++)
-                {
-                    if(i == characters.Count - 1)
-                    {
-                        characters[i].GetComponent<CharState>().target = characters[0].transform.position;
-                    }
-                    else
-                    {
-                        characters[i].GetComponent<CharState>().target = characters[i + 1].transform.position;
-                    }
-                }
-                inFrontSlot = Mathf.Abs((inFrontSlot + last) % characters.Count);
-                inFront = characters[inFrontSlot];
-                break;
-            default:
-                break;
-        }
+            moveState = true;
+            int last = characters.Count - 1;
 
+            switch (data)
+            {
+                case 0:
+                    for (int i = 0; i <= last; i++)
+                    {
+                        if (i == 0)
+                        {
+                            characters[i].GetComponent<CharState>().target = characters[last].transform.position;
+                        }
+                        else
+                        {
+                            characters[i].GetComponent<CharState>().target = characters[i - 1].transform.position;
+                        }
+                    }
+                    inFrontSlot = (inFrontSlot + 1) % characters.Count;
+                    break;
+                case 1:
+                    for (int i = 0; i <= last; i++)
+                    {
+                        if (i == characters.Count - 1)
+                        {
+                            characters[i].GetComponent<CharState>().target = characters[0].transform.position;
+                        }
+                        else
+                        {
+                            characters[i].GetComponent<CharState>().target = characters[i + 1].transform.position;
+                        }
+                    }
+                    inFrontSlot = Mathf.Abs((inFrontSlot + last) % characters.Count);
+                    inFront = characters[inFrontSlot];
+                    break;
+                default:
+                    break;
+            }
+        }
 
     }
 
