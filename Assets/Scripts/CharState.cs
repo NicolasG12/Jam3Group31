@@ -13,6 +13,7 @@ public class CharState : MonoBehaviour
     public Vector3 target;
     public float speed;
     public string attackAnim;
+    public string specialAnim;
 
     private Animator anim;
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class CharState : MonoBehaviour
         type = move;
         power = this.power * 2;
         confidence -= 50;
+        anim.Play(specialAnim);
         //Debug.Log(self.name + " used "+type+". " + ((int)health).ToString() + " health, "+((int)confidence).ToString() + " confidence.");
     }
 
