@@ -1,16 +1,16 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/GameUI.uss?fileID=7433441132597879392&amp;guid=7a1870223eab1e14c94dd220c1b2f7e9&amp;type=3#GameUI" />
     <ui:VisualElement name="Health" style="flex-grow: 1; justify-content: flex-start; align-items: flex-start; flex-direction: row; flex-wrap: nowrap; height: 114px; width: 1102px;">
-        <ui:VisualElement name="Health-Bar" style="height: 25px; width: 200px; background-color: rgb(0, 0, 0);">
-            <ui:VisualElement name="health-progress" style="background-color: rgb(22, 185, 3); height: 100%; width: 0; max-width: none; max-height: none;" />
+        <ui:VisualElement name="Health-Bar" style="height: 25px; width: 200px; background-color: rgb(0, 0, 0); background-image: url(&apos;project://database/Assets/UIAssets/bar.png?fileID=2800000&amp;guid=9039c8f3cabedb24cbc4b89221c7c6b6&amp;type=3#bar&apos;);">
+            <ui:VisualElement name="health-progress" style="background-color: rgb(22, 185, 3); height: 100%; width: 0; max-width: none; max-height: none; background-image: url(&apos;project://database/Assets/UIAssets/health.png?fileID=2800000&amp;guid=3bba35a7150b9ff48aa148aa6d0cba79&amp;type=3#health&apos;);" />
             <ui:VisualElement name="HP" style="background-image: url(&apos;project://database/Assets/Characters/hp.png?fileID=2800000&amp;guid=b68e3bbe5c03a6946960b80d299f4eb8&amp;type=3#hp&apos;); width: 40px; height: 25px; top: 0; position: absolute; left: 205px;" />
         </ui:VisualElement>
-        <ui:VisualElement name="Confidence-bar" style="position: absolute; width: 200px; height: 25px; top: 30px; left: 0; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="Confidence-bar" style="position: absolute; width: 200px; height: 25px; top: 30px; left: 0; background-color: rgb(0, 0, 0); background-image: url(&apos;project://database/Assets/UIAssets/bar.png?fileID=2800000&amp;guid=9039c8f3cabedb24cbc4b89221c7c6b6&amp;type=3#bar&apos;);">
             <ui:VisualElement name="confidence-progress" style="width: 0; height: 100%; background-color: rgb(34, 0, 255); background-image: url(&apos;project://database/Assets/UIAssets/blend.png?fileID=2800000&amp;guid=b0f49cfd46ebd6e40bc78d170e9341d3&amp;type=3#blend&apos;);" />
             <ui:VisualElement name="confidence-icon" style="position: absolute; background-image: url(&apos;project://database/Assets/Characters/confidencebaricon.png?fileID=2800000&amp;guid=5880dac2ed4471f4bbfd42430454999f&amp;type=3#confidencebaricon&apos;); left: 205px; top: 0; width: 40px; height: 25px;" />
         </ui:VisualElement>
-        <ui:VisualElement name="Enemy-Health" style="width: 200px; height: 25px; position: absolute; top: 0; left: 898px; background-color: rgb(0, 0, 0);">
-            <ui:VisualElement name="enemy-health-progress" style="height: 100%; width: 0; background-color: rgb(22, 185, 3);" />
+        <ui:VisualElement name="Enemy-Health" style="width: 200px; height: 25px; position: absolute; top: 0; left: 898px; background-color: rgb(0, 0, 0); background-image: url(&apos;project://database/Assets/UIAssets/bar.png?fileID=2800000&amp;guid=9039c8f3cabedb24cbc4b89221c7c6b6&amp;type=3#bar&apos;);">
+            <ui:VisualElement name="enemy-health-progress" style="height: 100%; width: 0; background-color: rgb(22, 185, 3); background-image: url(&apos;project://database/Assets/UIAssets/health.png?fileID=2800000&amp;guid=3bba35a7150b9ff48aa148aa6d0cba79&amp;type=3#health&apos;);" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="Buttons" style="height: 405px; width: 1101px; align-items: flex-start; justify-content: flex-start; position: relative; flex-direction: row; flex-wrap: nowrap; flex-grow: 0; top: 0;">
