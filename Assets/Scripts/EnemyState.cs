@@ -20,7 +20,6 @@ public class EnemyState : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        Debug.Log(anim);
     }
 
     // Update is called once per frame

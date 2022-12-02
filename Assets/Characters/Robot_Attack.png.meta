@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02e21417930982c46bdcb1820be65810
+guid: 3488dc27fb9c2d74cbe9e13742289aef
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SophronaBattleStart_0
+      name: Robot_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 310
+        width: 286
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c767e259696385743ba3a19429719acb
+      internalID: -1281692097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 310
+        width: 286
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9724800e94d2b44ea19665e93e0de95
+      internalID: -1853895181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 310
+        width: 286
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2913a31c6e3d45944a9ee1bcb5657945
+      internalID: -1217044733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Attack_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1100
-        height: 1500
+        width: 286
+        height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2979b9c96e3b81f4691b7eedff886647
-      internalID: -887569155
+      spriteID: efb9e12829d8e1e46b22f2459744e15c
+      internalID: -135382701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_1
+      name: Robot_Attack_4
       rect:
         serializedVersion: 2
-        x: 1100
+        x: 286
         y: 0
-        width: 1100
-        height: 1500
+        width: 286
+        height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,134 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99b2a226da6c8464e9727ce95b061871
-      internalID: -414995477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SophronaBattleStart_2
-      rect:
-        serializedVersion: 2
-        x: 2200
-        y: 0
-        width: 1100
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d025ca3b9af90e34fb1f404dab5c660a
-      internalID: -1524351479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SophronaBattleStart_3
-      rect:
-        serializedVersion: 2
-        x: 3300
-        y: 0
-        width: 1100
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7399c240fee30740b8d468fe3f351b8
-      internalID: 965078364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SophronaBattleStart_4
-      rect:
-        serializedVersion: 2
-        x: 4400
-        y: 0
-        width: 1100
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12d3eed896b7ed0478a59d94ec39767b
-      internalID: 1610652953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SophronaBattleStart_5
-      rect:
-        serializedVersion: 2
-        x: 5500
-        y: 0
-        width: 1100
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7768cd7bc5d63b7468b77232757d8a58
-      internalID: 1510596062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SophronaBattleStart_6
-      rect:
-        serializedVersion: 2
-        x: 6600
-        y: 0
-        width: 1100
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79516609a301fa24fa4e67f8935bcb2c
-      internalID: 412988787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SophronaBattleStart_7
-      rect:
-        serializedVersion: 2
-        x: 7700
-        y: 0
-        width: 1100
-        height: 1500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e555d168d14cdda4690870b098939d50
-      internalID: 387769212
+      spriteID: 5ebd2de06f6ba0648bf6576180742719
+      internalID: 1946782271
       vertices: []
       indices: 
       edges: []
@@ -295,14 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SophronaBattleStart_4: 1610652953
-      SophronaBattleStart_3: 965078364
-      SophronaBattleStart_5: 1510596062
-      SophronaBattleStart_1: -414995477
-      SophronaBattleStart_7: 387769212
-      SophronaBattleStart_6: 412988787
-      SophronaBattleStart_2: -1524351479
-      SophronaBattleStart_0: -887569155
+      Robot_Attack_4: 1946782271
+      Robot_Attack_3: -135382701
+      Robot_Attack_2: -1217044733
+      Robot_Attack_1: -1853895181
+      Robot_Attack_0: -1281692097
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

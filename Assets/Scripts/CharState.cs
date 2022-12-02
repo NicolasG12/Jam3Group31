@@ -36,8 +36,7 @@ public class CharState : MonoBehaviour
         //else if (self.name == "Sophrona") type = "block";
         //else type = "magic";
         type = move;
-        float cmultiplier = 100f/confidence;
-        power = 20f * cmultiplier;
+        power = this.power;
         anim.Play(attackAnim);
         //Debug.Log(self.name + " used "+type+". " + ((int)health).ToString() + " health, "+((int)confidence).ToString() + " confidence.");
     }
@@ -45,7 +44,7 @@ public class CharState : MonoBehaviour
     public void generateConfidenceAttack(ref float power, ref string type) 
     {
         type = move;
-        power = 20f;
+        power = this.power * 2;
         confidence -= 50;
         //Debug.Log(self.name + " used "+type+". " + ((int)health).ToString() + " health, "+((int)confidence).ToString() + " confidence.");
     }

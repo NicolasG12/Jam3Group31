@@ -28,7 +28,6 @@ public class LevelManagement : MonoBehaviour
         activeBackground.SetActive(true);
         activeEnemy = enemiesQueue.Dequeue();
         activeEnemy.SetActive(true);
-        Debug.Log(enemiesQueue.Count);
     }
 
     // Update is called once per frame
@@ -41,6 +40,13 @@ public class LevelManagement : MonoBehaviour
                 activeEnemy.SetActive(false);
                 activeEnemy = enemiesQueue.Dequeue();
                 activeEnemy.SetActive(true);
+                if (backgroundQueue.Count > 0)
+                {
+                    activeBackground.SetActive(false);
+                    activeBackground = backgroundQueue.Dequeue();
+                    activeBackground.SetActive(true);
+                }
+                switchLevel = false;
             }
             else
             {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02e21417930982c46bdcb1820be65810
+guid: 8417f8e845ba20e4c919d8691c88be4a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SophronaBattleStart_0
+      name: SophronaDefendSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2979b9c96e3b81f4691b7eedff886647
-      internalID: -887569155
+      spriteID: 146abb403a7d4ec4fb4124abe0794d2b
+      internalID: -1176525413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_1
+      name: SophronaDefendSheet_1
       rect:
         serializedVersion: 2
         x: 1100
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99b2a226da6c8464e9727ce95b061871
-      internalID: -414995477
+      spriteID: 5394bee8e278e224d8b47799d731db5b
+      internalID: -437147781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_2
+      name: SophronaDefendSheet_2
       rect:
         serializedVersion: 2
         x: 2200
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d025ca3b9af90e34fb1f404dab5c660a
-      internalID: -1524351479
+      spriteID: 60875ed53cc87f94897a4c58329bd325
+      internalID: 4736734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_3
+      name: SophronaDefendSheet_3
       rect:
         serializedVersion: 2
         x: 3300
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7399c240fee30740b8d468fe3f351b8
-      internalID: 965078364
+      spriteID: 83cf97824385d5f48b20b18abd92d17c
+      internalID: -431043665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_4
+      name: SophronaDefendSheet_4
       rect:
         serializedVersion: 2
         x: 4400
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12d3eed896b7ed0478a59d94ec39767b
-      internalID: 1610652953
+      spriteID: 336a1b3de5bb3904eac0ef94689f5e02
+      internalID: 544702169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_5
+      name: SophronaDefendSheet_5
       rect:
         serializedVersion: 2
         x: 5500
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7768cd7bc5d63b7468b77232757d8a58
-      internalID: 1510596062
+      spriteID: 0b842191554e5ac4880ea2b071709a6e
+      internalID: 1658189506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_6
+      name: SophronaDefendSheet_6
       rect:
         serializedVersion: 2
         x: 6600
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79516609a301fa24fa4e67f8935bcb2c
-      internalID: 412988787
+      spriteID: 43b61222e01da544493266a49799ecc5
+      internalID: -1264328505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SophronaBattleStart_7
+      name: SophronaDefendSheet_7
       rect:
         serializedVersion: 2
         x: 7700
@@ -278,8 +278,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e555d168d14cdda4690870b098939d50
-      internalID: 387769212
+      spriteID: cd960835a1e1e2240843f10aec273e7a
+      internalID: -1712015896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SophronaDefendSheet_8
+      rect:
+        serializedVersion: 2
+        x: 8800
+        y: 0
+        width: 1100
+        height: 1500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb5396d87775c84b8dbc131a97f08a6
+      internalID: -1908389670
       vertices: []
       indices: 
       edges: []
@@ -295,14 +316,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SophronaBattleStart_4: 1610652953
-      SophronaBattleStart_3: 965078364
-      SophronaBattleStart_5: 1510596062
-      SophronaBattleStart_1: -414995477
-      SophronaBattleStart_7: 387769212
-      SophronaBattleStart_6: 412988787
-      SophronaBattleStart_2: -1524351479
-      SophronaBattleStart_0: -887569155
+      SophronaDefendSheet_2: 4736734
+      SophronaDefendSheet_3: -431043665
+      SophronaDefendSheet_0: -1176525413
+      SophronaDefendSheet_4: 544702169
+      SophronaDefendSheet_6: -1264328505
+      SophronaDefendSheet_1: -437147781
+      SophronaDefendSheet_8: -1908389670
+      SophronaDefendSheet_7: -1712015896
+      SophronaDefendSheet_5: 1658189506
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
