@@ -30,6 +30,9 @@ public class CharacterSelection : MonoBehaviour
 
     public AudioSource buttonPress;
     public AudioSource buttonFail;
+    private Vector3 target;
+    public float switchSpeed = 1.0f;
+    Vector3[] positions = { new Vector3(-5.22f, -1.35f, 0f), new Vector3(-10.43f, 0.33f, 0f), new Vector3(-15.91f, 2.44f, 0f)};    
 
 
     private void OnEnable()
@@ -62,11 +65,16 @@ public class CharacterSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        characters[0].GetComponent<CharState>().target = positions[0];
+        characters[1].GetComponent<CharState>().target = positions[1];
+        characters[2].GetComponent<CharState>().target = positions[2];
+        
         enemy = levelManager.GetComponent<LevelManagement>().activeEnemy;
         //assign the infront to the first character
         inFront = characters[inFrontSlot];
         enemy.GetComponent<EnemyState>().generateAttack(ref enemyAttackPower, ref enemyAttackType);
         Debug.Log(enemy.name+"\'s gonna use "+enemyAttackType+" next turn!"+"           ignore this number: "+Random.Range(0f, 100f).ToString());
+        inFront = characters[0];
     }
 
     // Update is called once per frame
@@ -103,8 +111,8 @@ public class CharacterSelection : MonoBehaviour
 
             switch (data)
             {
-                case 0:
-                    for (int i = 0; i <= last; i++)
+                case 0: //clockwise
+/*                     for (int i = 0; i <= last; i++)
                     {
                         if (i == 0)
                         {
@@ -115,10 +123,19 @@ public class CharacterSelection : MonoBehaviour
                             characters[i].GetComponent<CharState>().target = characters[i - 1].transform.position;
                         }
                     }
-                    inFrontSlot = (inFrontSlot + 1) % characters.Count;
+                    inFrontSlot = (inFrontSlot + 1) % characters.Count; */
+                    //for (int i=0; i<3; i++) {
+                        //move character[0] to position[2]
+                        characters[0].GetComponent<CharState>().target = positions[1];
+                        characters[1].GetComponent<CharState>().target = positions[2];
+                        characters[2].GetComponent<CharState>().target = positions[0];
+                        //List<GameObject> charactersCopy 
+                        characters = new List<GameObject>() {characters[1],characters[2],characters[0]};
+                        inFront = characters[0];
+                    //}
                     break;
-                case 1:
-                    for (int i = 0; i <= last; i++)
+                case 1: //counterclockwise
+/*                     for (int i = 0; i <= last; i++)
                     {
                         if (i == characters.Count - 1)
                         {
@@ -130,7 +147,13 @@ public class CharacterSelection : MonoBehaviour
                         }
                     }
                     inFrontSlot = Mathf.Abs((inFrontSlot + last) % characters.Count);
-                    inFront = characters[inFrontSlot];
+                    inFront = characters[inFrontSlot]; */
+                        characters[0].GetComponent<CharState>().target = positions[2];
+                        characters[1].GetComponent<CharState>().target = positions[0];
+                        characters[2].GetComponent<CharState>().target = positions[1];
+                        //List<GameObject> charactersCopy 
+                        characters = new List<GameObject>() {characters[2],characters[0],characters[1]};
+                        inFront = characters[0];
                     break;
                 default:
                     break;
@@ -138,6 +161,23 @@ public class CharacterSelection : MonoBehaviour
         }
 
     }
+
+    /*
+    private void SwapChar(int data)
+    {
+        //set the target to whichever character is chosen
+        target = characters[data].transform.position;
+        //moves the characters to their respective positions
+        while (Vector3.Distance(inFront.transform.position, target) > 0.1f)
+        {
+            inFront.transform.position = Vector3.MoveTowards(inFront.transform.position, target, switchSpeed);
+        }
+        while (Vector3.Distance(characters[data].transform.position, inFront.transform.position) > 0.1f) {
+            characters[data].transform.position = Vector3.MoveTowards(characters[data].transform.position, inFront.transform.position, switchSpeed);
+        }
+        //update the infront character
+        inFront = characters[data];
+    }*/
 
 
     //function to handle attack logic (unfinished)
