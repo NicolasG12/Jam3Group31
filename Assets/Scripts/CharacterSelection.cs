@@ -126,10 +126,11 @@ public class CharacterSelection : MonoBehaviour
                     inFrontSlot = (inFrontSlot + 1) % characters.Count; */
                     //for (int i=0; i<3; i++) {
                         //move character[0] to position[2]
-                        characters[0].GetComponent<CharState>().target = positions[1];
-                        characters[1].GetComponent<CharState>().target = positions[2];
-                        characters[2].GetComponent<CharState>().target = positions[0];
+                        characters[0].GetComponent<CharState>().target = positions[2];
+                        characters[1].GetComponent<CharState>().target = positions[0];
+                        characters[2].GetComponent<CharState>().target = positions[1];
                         //List<GameObject> charactersCopy 
+                        
                         characters = new List<GameObject>() {characters[1],characters[2],characters[0]};
                         inFront = characters[0];
                     //}
@@ -148,9 +149,10 @@ public class CharacterSelection : MonoBehaviour
                     }
                     inFrontSlot = Mathf.Abs((inFrontSlot + last) % characters.Count);
                     inFront = characters[inFrontSlot]; */
-                        characters[0].GetComponent<CharState>().target = positions[2];
-                        characters[1].GetComponent<CharState>().target = positions[0];
-                        characters[2].GetComponent<CharState>().target = positions[1];
+                        
+                        characters[0].GetComponent<CharState>().target = positions[1];
+                        characters[1].GetComponent<CharState>().target = positions[2];
+                        characters[2].GetComponent<CharState>().target = positions[0];
                         //List<GameObject> charactersCopy 
                         characters = new List<GameObject>() {characters[2],characters[0],characters[1]};
                         inFront = characters[0];
